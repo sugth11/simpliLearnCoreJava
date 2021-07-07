@@ -2,6 +2,7 @@ package File.Data.system;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class DeleteFile extends FileNameProcess {
 
@@ -16,6 +17,9 @@ public class DeleteFile extends FileNameProcess {
             result = fileFromUserToDelete.delete();
             if(result){
                 System.out.println(fileFromUserToDelete.getCanonicalPath()+" is successfully deleted! "); //returns the path string
+                System.out.println("Press '1' to go to previous menu or press '2' to go to main menu");
+                Scanner operation= new Scanner(System.in);
+                new goBackMenu(operation);
             } else{
                 System.out.println("Failed");
             }
